@@ -4,6 +4,7 @@ public int calculate(String s) {
         int result = 0;
         int temp = 0;
         System.out.print("Change for HW0");
+        System.out.print("Oh I see the change!!");
         if(s==null||length==0){
             return 0;
         }
