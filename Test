@@ -3,6 +3,7 @@ public int calculate(String s) {
         Stack<Integer> stack = new Stack<Integer>();
         int result = 0;
         int temp = 0;
+        System.out.print("Change for HW0");
         if(s==null||length==0){
             return 0;
         }
