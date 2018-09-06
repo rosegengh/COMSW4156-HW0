@@ -1,0 +1,36 @@
+public int calculate(String s) {
+        int length = s.length();
+        Stack<Integer> stack = new Stack<Integer>();
+        int result = 0;
+        int temp = 0;
+        if(s==null||length==0){
+            return 0;
+        }
+        char sign = '+';
+        for(int i = 0; i<length;i++){
+            if(Character.isDigit(s.charAt(i))){
+                temp = temp*10+s.charAt(i)-'0';
+            }
+            if((!Character.isDigit(s.charAt(i))&&' '!=s.charAt(i))||i==length-1){
+                if(sign=='+'){
+                    stack.push(temp);
+                }
+                if(sign=='-'){
+                    stack.push(-temp);
+                }
+                if(sign=='*'){
+                    stack.push(stack.pop()*temp);
+                }
+                if(sign=='/'){
+                    stack.push(stack.pop()/temp);
+                }
+                sign = s.charAt(i);
+                temp = 0;
+            }
+            
+        }
+        for(int j:stack){
+            result+=j;
+        }
+        return result;
+    }
